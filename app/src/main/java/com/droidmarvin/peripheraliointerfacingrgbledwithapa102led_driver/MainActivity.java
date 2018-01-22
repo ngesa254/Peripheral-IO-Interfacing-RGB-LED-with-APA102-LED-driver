@@ -34,4 +34,16 @@ public class MainActivity extends Activity {
             Log.e(TAG, "Error initializing LED strip", e);
         }
     }
+
+    private void destroyLedStrip() {
+        if (mRGB != null) {
+            try {
+                mRGB.close();
+            } catch (IOException e) {
+                Log.e(TAG, "Exception closing LED strip", e);
+            } finally {
+                mRGB = null;
+            }
+        }
+    }
 }
