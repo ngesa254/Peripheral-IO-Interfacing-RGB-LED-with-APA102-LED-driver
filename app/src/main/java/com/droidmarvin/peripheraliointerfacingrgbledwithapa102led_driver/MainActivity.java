@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
             mRGBColors[i] = Color.HSVToColor(0, hsv);
         }
 
+        // Light the RGB
         try {
             mRGB.write(mRGBColors);
         } catch (IOException e) {
