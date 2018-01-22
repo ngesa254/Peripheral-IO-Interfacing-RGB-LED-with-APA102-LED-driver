@@ -1,6 +1,7 @@
 package com.droidmarvin.peripheraliointerfacingrgbledwithapa102led_driver;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -23,6 +24,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupRGB();
+
+        float[] hsv = {1f, 1f, 1f};
+        for (int i = 0; i < mRGBColors.length; i++) { // Assigns gradient colors.
+            hsv[0] = i * 360.f / mRGBColors.length;
+            mRGBColors[i] = Color.HSVToColor(0, hsv);
+        }
     }
 
     @Override
