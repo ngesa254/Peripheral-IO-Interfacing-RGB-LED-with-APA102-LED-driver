@@ -24,6 +24,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroyLedStrip();
+    }
+
     private void setupRGB() {
         mRGBColors = new int[NUM_LEDS];
         try {
