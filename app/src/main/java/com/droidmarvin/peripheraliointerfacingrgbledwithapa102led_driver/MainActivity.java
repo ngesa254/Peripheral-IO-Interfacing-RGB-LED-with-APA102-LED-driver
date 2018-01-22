@@ -30,6 +30,12 @@ public class MainActivity extends Activity {
             hsv[0] = i * 360.f / mRGBColors.length;
             mRGBColors[i] = Color.HSVToColor(0, hsv);
         }
+
+        try {
+            mRGB.write(mRGBColors);
+        } catch (IOException e) {
+            Log.e(TAG, "Error setting LED colors", e);
+        }
     }
 
     @Override
